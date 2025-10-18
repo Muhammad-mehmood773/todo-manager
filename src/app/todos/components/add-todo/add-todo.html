@@ -1,0 +1,76 @@
+<div class="container ">
+  <div nz-row class="justify-content-center text-center mb-4">
+    <div nz-col nzSpan="24">
+      <h1 nz-typography> To-Do Manager</h1>
+      <p nz-typography >Manage your daily tasks efficiently</p>
+    </div>
+  </div>
+
+ <form nz-form class="w-100" [formGroup]="todoForm" (ngSubmit)="addTodo()">
+  <div nz-row class="justify-content-center">
+    <div nz-col nzXs="24" nzSm="18" nzMd="14" nzLg="10" nzXl="8">
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="errorTemplate">
+          <div nz-row nzGutter="8">
+            <div nz-col nzSpan="18">
+              <input
+                nz-input
+                formControlName="title"
+                id="adTodo"
+                placeholder="Enter a new task..."
+              />
+            </div>
+            <div nz-col nzSpan="6">
+              <button
+                nz-button
+                nzType="primary"
+                class="w-100 d-flex align-items-center justify-content-center gap-2"
+                type="submit"
+              >
+                <i class="bi bi-plus-circle-fill fs-5"></i>
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <ng-template #errorTemplate let-control>
+        {{ getErrorMessage('title') }}
+      </ng-template>
+    </div>
+  </div>
+</form>
+
+</div>
+
+<div class="row w-100 bg-body-secondary p-2">
+  <nz-card  class="shadow">
+    <nz-breadcrumb class="">
+      <nz-breadcrumb-item>
+        <a routerLink="/Todo-Manager/all-todos" routerLinkActive="text-primary fw-semibold">
+          <i class="bi bi-list-task me-1"></i> All Todos
+        </a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a routerLink="/Todo-Manager/complete" routerLinkActive="text-success fw-semibold">
+          <i class="bi bi-check-circle-fill me-1"></i> Completed
+        </a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a routerLink="/Todo-Manager/pending" routerLinkActive="text-warning fw-semibold">
+          <i class="bi bi-hourglass-split me-1"></i> Pending
+        </a>
+      </nz-breadcrumb-item>
+         <nz-breadcrumb-item>
+        <a routerLink="/Todo-Manager/panding-complete-todos" routerLinkActive="text-danger fw-semibold">
+          <i class="bi bi-align-middle me-1"></i> Pending or Completed Todos
+        </a>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+
+  </nz-card>
+</div>
+
+
+

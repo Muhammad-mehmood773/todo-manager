@@ -19,9 +19,15 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
               }
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
@@ -80,11 +86,15 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/theme.less"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7ed3e51d-5b1f-4bdc-81e2-27396ad92a96"
   }
 }

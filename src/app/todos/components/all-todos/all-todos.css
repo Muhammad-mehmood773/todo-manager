@@ -1,0 +1,56 @@
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+/* ✅ Pending Todo Style */
+.todo-pending {
+  background: #fffbe6; /* light yellow */
+  border: 1px solid #ffe58f;
+}
+
+.todo-pending .todo-title {
+  color: #ad8b00;
+}
+
+/* ✅ Completed Todo Style */
+.todo-completed {
+  background: #f6ffed; /* light green */
+  border: 1px solid #b7eb8f;
+}
+
+.todo-completed .todo-title {
+  color: #389e0d;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+/* Checkbox Styling (same as before) */
+::ng-deep .ant-checkbox-inner {
+  border-radius: 50% !important;
+  width: 25px !important;
+  height: 25px !important;
+  border: 2px solid #1677ff !important;
+}
+
+::ng-deep .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #1677ff !important;
+  border-color: #1677ff !important;
+}
+
+::ng-deep .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+::ng-deep .ant-checkbox:hover .ant-checkbox-inner {
+  border-color: #4096ff !important;
+}
